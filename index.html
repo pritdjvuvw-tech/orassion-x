@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EcoCycle - Turn Waste Into Worth</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+    <!-- Background decoration -->
+    <div class="bg-circle circle-one"></div>
+    <div class="bg-circle circle-two"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <div class="logo" onclick="goHome()">
+            <div class="logo-icon">♻</div>
+            <span>Eco<span>Cycle</span></span>
+        </div>
+
+        <div class="nav-links">
+            <button onclick="goHome()">Home</button>
+            <button onclick="showDashboard()">Dashboard</button>
+            <button onclick="showRewards()">Rewards</button>
+        </div>
+
+        <div class="profile">
+            <div class="profile-avatar">🌱</div>
+            <span>Eco Seller</span>
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN APPLICATION -->
+    <main id="app">
+
+
+        <!-- HOME SCREEN -->
+        <section id="homeScreen" class="screen active">
+
+            <div class="hero">
+
+                <div class="hero-text">
+
+                    <div class="eco-badge">
+                        🌎 Give waste a second life
+                    </div>
+
+                    <h1>
+                        Turn your waste
+                        <span>into worth.</span>
+                    </h1>
+
+                    <p>
+                        Sell your recyclable waste to verified bulk buyers,
+                        earn money, collect rewards and build your
+                        Nature-Friendly score.
+                    </p>
+
+                    <div class="hero-stats">
+
+                        <div>
+                            <strong>₹2.4L+</strong>
+                            <small>Paid to sellers</small>
+                        </div>
+
+                        <div>
+                            <strong>8.7K+</strong>
+                            <small>Kg recycled</small>
+                        </div>
+
+                        <div>
+                            <strong>4.8/5</strong>
+                            <small>Eco rating</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-visual">
+
+                    <div class="planet">
+                        🌍
+                    </div>
+
+                    <div class="floating-card card-one">
+                        ♻️
+                        <div>
+                            <strong>2.8 kg</strong>
+                            <small>Plastic recycled</small>
+                        </div>
+                    </div>
+
+                    <div class="floating-card card-two">
+                        💰
+                        <div>
+                            <strong>₹420</strong>
+                            <small>Earned today</small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Waste selection -->
+
+            <div class="section-heading">
+
+                <div>
+                    <span class="eyebrow">START SELLING</span>
+
+                    <h2>
+                        What kind of waste
+                        do you have?
+                    </h2>
+                </div>
+
+                <p>
+                    Choose a category to find the right
+                    recycling stream.
+                </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+                <!-- RURAL -->
+
+                <button
+                    class="category-card rural"
+                    onclick="openCategory('rural')"
+                >
+
+                    <div class="category-icon">
+                        🌾
+                    </div>
+
+                    <div class="category-content">
+                        <h3>Rural Waste</h3>
+
+                        <p>
+                            Agricultural and rural household waste
+                        </p>
+
+                        <span class="explore">
+                            Explore →
+                        </span>
+                    </div>
+
+                </button>
+
+
+                <!-- URBAN -->
+
+                <button
+                    class="category-card urban"
+                    onclick="openCategory('urban')"
+                >
+
+                    <div class="category-icon">
+                        🏙️
+                    </div>
+
+                    <div class="category-content">
+                        <h3>Urban Waste</h3>
+
+                        <p>
+                            Household and city-generated waste
+                        </p>
+
+                        <span class="explore">
+                            Explore →
+                        </span>
+                    </div>
+
+                </button>
+
+
+                <!-- INDUSTRIAL -->
+
+                <button
+                    class="category-card industrial"
+                    onclick="openCategory('industrial')"
+                >
+
+                    <div class="category-icon">
+                        🏭
+                    </div>
+
+                    <div class="category-content">
+                        <h3>Industrial Waste</h3>
+
+                        <p>
+                            Bulk waste from companies and industries
+                        </p>
+
+                        <span class="explore">
+                            Sell in bulk →
+                        </span>
+                    </div>
+
+                </button>
+
+            </div>
+
+
+            <!-- HOW IT WORKS -->
+
+            <section class="how-section">
+
+                <div class="section-heading centered">
+
+                    <div>
+                        <span class="eyebrow">SIMPLE PROCESS</span>
+
+                        <h2>
+                            Waste → Money → Rewards
+                        </h2>
+                    </div>
+
+                </div>
+
+
+                <div class="steps">
+
+                    <div class="step">
+                        <div class="step-number">01</div>
+                        <span class="step-icon">🗑️</span>
+                        <h3>List your waste</h3>
+                        <p>
+                            Select the type and enter its weight.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">02</div>
+                        <span class="step-icon">🏢</span>
+                        <h3>Buyer matches</h3>
+                        <p>
+                            Our marketplace matches your waste with buyers.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">03</div>
+                        <span class="step-icon">💰</span>
+                        <h3>Get paid</h3>
+                        <p>
+                            Receive your waste value after collection.
+                        </p>
+                    </div>
+
+                    <div class="step-line"></div>
+
+                    <div class="step">
+                        <div class="step-number">04</div>
+                        <span class="step-icon">🎁</span>
+                        <h3>Earn rewards</h3>
+                        <p>
+                            Get coupons and improve your eco rating.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- CATEGORY SCREEN -->
+
+        <section id="categoryScreen" class="screen">
+
+            <button class="back-button" onclick="goHome()">
+                ← Back
+            </button>
+
+            <div class="category-header">
+
+                <div id="categoryHeaderIcon" class="large-icon">
+                    🌾
+                </div>
+
+                <div>
+                    <span id="categoryEyebrow" class="eyebrow">
+                        RURAL WASTE
+                    </span>
+
+                    <h1 id="categoryTitle">
+                        Select your waste
+                    </h1>
+
+                    <p id="categoryDescription">
+                        Choose the waste type you want to sell.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="wasteOptions" class="waste-grid"></div>
+
+        </section>
+
+
+
+        <!-- SELL SCREEN -->
+
+        <section id="sellScreen" class="screen">
+
+            <button class="back-button" onclick="backToCategory()">
+                ← Back
+            </button>
+
+            <div class="sell-layout">
+
+                <div class="sell-form-card">
+
+                    <div class="form-header">
+
+                        <span id="sellIcon" class="large-icon">
+                            ♻️
+                        </span>
+
+                        <div>
+                            <span class="eyebrow">
+                                SELL YOUR WASTE
+                            </span>
+
+                            <h1 id="sellTitle">
+                                Plastic
+                            </h1>
+                        </div>
+
+                    </div>
+
+
+                    <form id="sellForm">
+
+                        <label>
+                            Waste weight
+                        </label>
+
+                        <div class="weight-input">
+
+                            <input
+                                type="number"
+                                id="weight"
+                                min="0.1"
+                                step="0.1"
+                                placeholder="Enter weight"
+                                required
+                            >
+
+                            <span>KG</span>
+
+                        </div>
+
+
+                        <label>
+                            Collection type
+                        </label>
+
+                        <div class="collection-options">
+
+                            <label class="radio-card">
+
+                                <input
+                                    type="radio"
+                                    name="collection"
+                                    value="pickup"
+                                    checked
+                                >
+
+                                <div>
+                                    <strong>🚚 Doorstep pickup</strong>
+                                    <small>
+                                        Buyer collects the waste
+                                    </small>
+                                </div>
+
+                            </label>
+
+
+                            <label class="radio-card">
+
+                                <input
+                                    type="radio"
+                                    name="collection"
+                                    value="drop"
+                                >
+
+                                <div>
+                                    <strong>📍 I will drop it</strong>
+                                    <small>
+                                        Drop at a collection centre
+                                    </small>
+                                </div>
+
+                            </label>
+
+                        </div>
+
+
+                        <label>
+                            Additional note
+                            <span class="optional">(optional)</span>
+                        </label>
+
+                        <textarea
+                            id="notes"
+                            placeholder="Describe your waste..."
+                        ></textarea>
+
+
+                        <button
+                            type="submit"
+                            class="primary-button"
+                        >
+                            Calculate my earnings →
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <div class="estimate-card">
+
+                    <span class="eyebrow">
+                        LIVE ESTIMATE
+                    </span>
+
+                    <div class="estimate-value">
+                        ₹<span id="estimate">0</span>
+                    </div>
+
+                    <p>
+                        Estimated payout based on current
+                        marketplace rates.
+                    </p>
+
+
+                    <div class="estimate-divider"></div>
+
+
+                    <div class="estimate-row">
+                        <span>Waste</span>
+                        <strong id="estimateWaste">
+                            —
+                        </strong>
+                    </div>
+
+                    <div class="estimate-row">
+                        <span>Weight</span>
+                        <strong id="estimateWeight">
+                            0 kg
+                        </strong>
+                    </div>
+
+                    <div class="estimate-row">
+                        <span>Eco points</span>
+                        <strong id="estimatePoints">
+                            +0 🌱
+                        </strong>
+                    </div>
+
+
+                    <div class="eco-tip">
+
+                        <span>🌱</span>
+
+                        <div>
+                            <strong>
+                                Every kg counts!
+                            </strong>
+
+                            <p>
+                                Your waste can become someone's
+                                raw material.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RESULT SCREEN -->
+
+        <section id="resultScreen" class="screen">
+
+            <div class="success-container">
+
+                <div class="success-animation">
+                    ✓
+                </div>
+
+                <span class="eyebrow">
+                    LISTING CREATED
+                </span>
+
+                <h1>
+                    Your waste has value! 🎉
+                </h1>
+
+                <p>
+                    We've added your waste to the marketplace.
+                    Here's what you earned.
+                </p>
+
+
+                <div class="result-grid">
+
+                    <div class="result-card">
+
+                        <span>💰</span>
+
+                        <small>Estimated payout</small>
+
+                        <strong>
+                            ₹<span id="resultMoney">0</span>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <span>🌱</span>
+
+                        <small>Nature-friendly rating</small>
+
+                        <strong>
+                            <span id="resultRating">4.5</span>/5
+                        </strong>
+
+                    </div>
+
+
+                    <div class="result-card">
+
+                        <span>⭐</span>
+
+                        <small>Eco points earned</small>
+
+                        <strong>
+                            +<span id="resultPoints">0</span>
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="coupon-card">
+
+                    <div class="coupon-icon">
+                        🎁
+                    </div>
+
+                    <div>
+
+                        <span>
+                            REWARD UNLOCKED
+                        </span>
+
+                        <h3 id="couponName">
+                            ₹50 Shopping Coupon
+                        </h3>
+
+                        <p>
+                            Use your eco points to unlock more rewards.
+                        </p>
+
+                    </div>
+
+                    <button onclick="showRewards()">
+                        View rewards
+                    </button>
+
+                </div>
+
+
+                <div class="result-buttons">
+
+                    <button
+                        class="primary-button"
+                        onclick="goHome()"
+                    >
+                        Sell more waste
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        onclick="showDashboard()"
+                    >
+                        View dashboard
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- DASHBOARD -->
+
+        <section id="dashboardScreen" class="screen">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <span class="eyebrow">
+                        YOUR IMPACT
+                    </span>
+
+                    <h1>
+                        Eco Dashboard 🌱
+                    </h1>
+
+                    <p>
+                        See how much value you're creating from waste.
+                    </p>
+                </div>
+
+                <div class="level-badge">
+                    🌿 Eco Starter
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-stats">
+
+                <div class="dash-stat">
+                    <span>♻️</span>
+                    <small>Total waste sold</small>
+                    <strong>
+                        <span id="totalWaste">0</span> kg
+                    </strong>
+                </div>
+
+                <div class="dash-stat">
+                    <span>💰</span>
+                    <small>Total earned</small>
+                    <strong>
+                        ₹<span id="totalEarned">0</span>
+                    </strong>
+                </div>
+
+                <div class="dash-stat">
+                    <span>⭐</span>
+                    <small>Eco points</small>
+                    <strong>
+                        <span id="totalPoints">0</span>
+                    </strong>
+                </div>
+
+                <div class="dash-stat">
+                    <span>🌍</span>
+                    <small>Nature rating</small>
+                    <strong>
+                        <span id="averageRating">0</span>/5
+                    </strong>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-content">
+
+                <div class="history-card">
+
+                    <div class="card-title">
+                        <h2>Recent activity</h2>
+                        <span>All listings</span>
+                    </div>
+
+                    <div id="historyList">
+                        <div class="empty-state">
+                            <span>🌱</span>
+                            <p>
+                                No waste sold yet.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="impact-card">
+
+                    <span class="eyebrow">
+                        YOUR IMPACT
+                    </span>
+
+                    <h2>
+                        You're helping build
+                        a circular economy.
+                    </h2>
+
+                    <div class="impact-illustration">
+                        🌎
+                    </div>
+
+                    <p>
+                        Keep recycling to increase your
+                        Nature-Friendly rating and unlock
+                        better rewards.
+                    </p>
+
+                    <button
+                        class="primary-button"
+                        onclick="goHome()"
+                    >
+                        Sell waste
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- REWARDS -->
+
+        <section id="rewardsScreen" class="screen">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <span class="eyebrow">
+                        ECO REWARDS
+                    </span>
+
+                    <h1>
+                        Your rewards 🎁
+                    </h1>
+
+                    <p>
+                        Turn your eco points into useful coupons.
+                    </p>
+                </div>
+
+                <div class="points-display">
+                    ⭐ <span id="rewardPoints">0</span> points
+                </div>
+
+            </div>
+
+
+            <div class="reward-grid">
+
+                <div class="reward-card">
+
+                    <div class="reward-image">
+                        ☕
+                    </div>
+
+                    <div class="reward-body">
+
+                        <span class="reward-tag">
+                            POPULAR
+                        </span>
+
+                        <h3>
+                            ₹50 Food Coupon
+                        </h3>
+
+                        <p>
+                            Get a discount on your next meal.
+                        </p>
+
+                        <div class="reward-bottom">
+
+                            <strong>
+                                100 points
+                            </strong>
+
+                            <button onclick="redeemReward(100, '₹50 Food Coupon')">
+                                Redeem
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reward-card">
+
+                    <div class="reward-image">
+                        🛒
+                    </div>
+
+                    <div class="reward-body">
+
+                        <span class="reward-tag">
+                            SHOPPING
+                        </span>
+
+                        <h3>
+                            ₹100 Shopping Coupon
+                        </h3>
+
+                        <p>
+                            Save money on your next purchase.
+                        </p>
+
+                        <div class="reward-bottom">
+
+                            <strong>
+                                200 points
+                            </strong>
+
+                            <button onclick="redeemReward(200, '₹100 Shopping Coupon')">
+                                Redeem
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reward-card">
+
+                    <div class="reward-image">
+                        📱
+                    </div>
+
+                    <div class="reward-body">
+
+                        <span class="reward-tag">
+                            DIGITAL
+                        </span>
+
+                        <h3>
+                            ₹100 Digital Gift Coupon
+                        </h3>
+
+                        <p>
+                            A digital reward for your eco efforts.
+                        </p>
+
+                        <div class="reward-bottom">
+
+                            <strong>
+                                250 points
+                            </strong>
+
+                            <button onclick="redeemReward(250, '₹100 Digital Gift Coupon')">
+                                Redeem
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="reward-card">
+
+                    <div class="reward-image">
+                        🌳
+                    </div>
+
+                    <div class="reward-body">
+
+                        <span class="reward-tag">
+                            ECO
+                        </span>
+
+                        <h3>
+                            Plant a Tree
+                        </h3>
+
+                        <p>
+                            Convert your points into a tree planting action.
+                        </p>
+
+                        <div class="reward-bottom">
+
+                            <strong>
+                                300 points
+                            </strong>
+
+                            <button onclick="redeemReward(300, 'Plant a Tree')">
+                                Redeem
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- TOAST -->
+    <div id="toast" class="toast">
+        <span>✓</span>
+        <p id="toastMessage">
+            Success
+        </p>
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
