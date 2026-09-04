@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Orassion-X — Sell Waste, Earn Reward, Save Nature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ 
+<header class="site-header">
+  <div class="wrap header-inner">
+    <span class="brand">Project <em>Orassion-X</em></span>
+    <nav class="main-nav">
+      <a href="#categories">Categories</a>
+      <a href="#sell">Sell waste</a>
+      <a href="#board">Live board</a>
+      <a href="#companies">For companies</a>
+    </nav>
+  </div>
+</header>
+ 
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <h1>What you throw away<br>still has weight.</h1>
+      <p class="hero-sub">List your scrap — plastic, paper, metal, machine parts, anything — and let recycling companies bid for it in bulk. Get paid, get rated on how much nature you saved.</p>
+      <a href="#categories" class="btn btn-primary">Start selling</a>
+    </div>
+    <div class="hero-readout" aria-label="Community impact so far">
+      <span class="readout-label">Diverted from landfills so far</span>
+      <span class="readout-number" id="heroCounter">0</span>
+      <span class="readout-unit">kilograms</span>
+      <div class="readout-ticks" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>
+ 
+<section class="categories" id="categories">
+  <div class="wrap">
+    <h2>Where is your waste coming from?</h2>
+    <p class="section-sub">Pick a source. Pricing, pickup logistics, and buyer type differ for each.</p>
+ 
+    <div class="cat-row">
+      <button class="cat-stub" data-category="rural" type="button">
+        <span class="cat-stub-stamp">R</span>
+        <span class="cat-stub-name">Rural Wastes</span>
+        <span class="cat-stub-desc">Crop residue, husk, cattle waste, farm plastic</span>
+      </button>
+      <button class="cat-stub" data-category="urban" type="button">
+        <span class="cat-stub-stamp">U</span>
+        <span class="cat-stub-name">Urban Wastes</span>
+        <span class="cat-stub-desc">Household plastic, e-waste, paper, glass, metal scrap</span>
+      </button>
+      <button class="cat-stub" data-category="industrial" type="button">
+        <span class="cat-stub-stamp">I</span>
+        <span class="cat-stub-name">Industrial Wastes</span>
+        <span class="cat-stub-desc">Offcuts, chemical drums, machine scrap, packaging waste</span>
+      </button>
+    </div>
+  </div>
+</section>
+ 
+<section class="sell" id="sell">
+  <div class="wrap sell-inner">
+    <div class="sell-form-col">
+      <h2>List your waste</h2>
+      <p class="section-sub">Fill this in and it lands on the live board for buyers to see.</p>
+ 
+      <form id="sellForm" class="sell-form">
+        <label>
+          Category
+          <select id="fCategory" required>
+            <option value="" disabled selected>Choose a category</option>
+            <option value="rural">Rural</option>
+            <option value="urban">Urban</option>
+            <option value="industrial">Industrial</option>
+          </select>
+        </label>
+ 
+        <label>
+          Waste type
+          <input id="fType" type="text" placeholder="e.g. PET bottles, crop husk, steel offcuts" required>
+        </label>
+ 
+        <label>
+          Weight (kg)
+          <input id="fWeight" type="number" min="1" step="0.5" placeholder="e.g. 120" required>
+        </label>
+ 
+        <label>
+          Your city / village
+          <input id="fLocation" type="text" placeholder="e.g. Nadia, West Bengal" required>
+        </label>
+ 
+        <label>
+          Seller name
+          <input id="fSeller" type="text" placeholder="Your name" required>
+        </label>
+ 
+        <button type="submit" class="btn btn-primary">List this waste</button>
+      </form>
+    </div>
+ 
+    <div class="sell-result-col">
+      <div class="score-card" id="scoreCard">
+        <span class="score-card-label">Nature Score</span>
+        <span class="score-card-value" id="scoreValue">—</span>
+        <span class="score-card-sub" id="scoreSub">List something to see your score</span>
+        <div class="score-bar-track"><div class="score-bar-fill" id="scoreBarFill"></div></div>
+        <div class="score-breakdown" id="scoreBreakdown"></div>
+      </div>
+ 
+      <div class="reward-card">
+        <span class="reward-label">Estimated payout</span>
+        <span class="reward-value" id="rewardValue">₹0</span>
+        <span class="reward-note" id="rewardNote">Based on category, weight and waste type</span>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+<section class="board" id="board">
+  <div class="wrap">
+    <div class="board-head">
+      <h2>Live listings</h2>
+      <div class="board-filters" id="boardFilters">
+        <button class="filter-chip is-active" data-filter="all" type="button">All</button>
+        <button class="filter-chip" data-filter="rural" type="button">Rural</button>
+        <button class="filter-chip" data-filter="urban" type="button">Urban</button>
+        <button class="filter-chip" data-filter="industrial" type="button">Industrial</button>
+      </div>
+    </div>
+    <div class="board-list" id="boardList"></div>
+  </div>
+</section>
+ 
+<section class="companies" id="companies">
+  <div class="wrap companies-inner">
+    <div>
+      <h2>Buying in bulk?</h2>
+      <p class="section-sub">Recycling companies can filter listings by category, weight and location, then commit to a bulk purchase directly from the board above.</p>
+      <ul class="companies-list">
+        <li>Filter by rural, urban or industrial supply</li>
+        <li>See total weight available per waste type before committing</li>
+        <li>Sellers are rated, so supply quality is visible upfront</li>
+      </ul>
+    </div>
+    <div class="companies-stat">
+      <span class="companies-stat-num" id="companyListingCount">0</span>
+      <span class="companies-stat-label">active listings ready for pickup</span>
+    </div>
+  </div>
+</section>
+ 
+<footer class="site-footer">
+  <div class="wrap">
+    <span>Project Orassion-X — every kilo sold is a kilo that didn't go to a landfill.</span>
+  </div>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+ 
